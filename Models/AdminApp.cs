@@ -183,28 +183,28 @@ public class AdminApp
             Console.WriteLine("Vamos a modificar el estudiante!");
 
             Console.WriteLine("Nombre nuevo: ");
-            var NuevoNombre = Console.ReadLine();
-            estudiante.Nombre = NuevoNombre;
+            var nuevoNombre = Console.ReadLine();
+            estudiante.ActualizarNombre(nuevoNombre);
 
             Console.WriteLine("Apellido Nuevo: ");
-            var NuevoApellido = Console.ReadLine();
-            estudiante.Apellido = NuevoApellido;
+            var nuevoApellido = Console.ReadLine();
+            estudiante.ActualizarApellido(nuevoApellido);
 
             Console.WriteLine("Tipo de documento nuevo: ");
-            var NuevoTipoDocumento = Console.ReadLine();
-            estudiante.TipoDocumento = NuevoTipoDocumento;
+            var nuevoTipoDocumento = Console.ReadLine();
+            estudiante.ActualizarTipoDocumento(nuevoTipoDocumento);
 
             Console.WriteLine("Número de documento nuevo: ");
-            var NuevoNumeroDocumento = Console.ReadLine();
-            estudiante.NumeroDocumento = NuevoTipoDocumento;
+            var nuevoDocumento = Console.ReadLine();
+            estudiante.ActualizarDocumento(nuevoDocumento);
 
             Console.WriteLine("Email nuevo: ");
-            var NuevoEmail = Console.ReadLine();
-            estudiante.Email = NuevoEmail;
+            var nuevoEmail = Console.ReadLine();
+            estudiante.ActualizarEmail(nuevoEmail);
 
             Console.WriteLine("Teléfono nuevo: ");
-            var NuevoTelefono = Console.ReadLine();
-            estudiante.Telefono = NuevoTelefono;
+            var nuevoTelefono = Console.ReadLine();
+            estudiante.ActualizarTelefono(nuevoTelefono);
 
             Console.WriteLine("Nombre acudiente nuevo: ");
             var NuevoAcudiente = Console.ReadLine();
@@ -230,36 +230,36 @@ public class AdminApp
             Console.WriteLine("Vamos a modificar el profesor!");
 
             Console.WriteLine("Nombre nuevo: ");
-            var NuevoNombre = Console.ReadLine();
-            profesor.Nombre = NuevoNombre;
+            var nuevoNombre = Console.ReadLine();
+            profesor.ActualizarNombre(nuevoNombre);
 
             Console.WriteLine("Apellido nuevo: ");
-            var NuevoApellido = Console.ReadLine();
-            profesor.Apellido = NuevoApellido;
+            var nuevoApellido = Console.ReadLine();
+            profesor.ActualizarApellido(nuevoApellido);
 
             Console.WriteLine("Tipo de documento nuevo: ");
-            var NuevoTipoDocumento = Console.ReadLine();
-            profesor.TipoDocumento = NuevoTipoDocumento;
+            var nuevoTipoDocumento = Console.ReadLine();
+            profesor.ActualizarTipoDocumento(nuevoTipoDocumento);
 
             Console.WriteLine("Número de documento nuevo: ");
-            var NuevoNumeroDocumento = Console.ReadLine();
-            profesor.NumeroDocumento = NuevoTipoDocumento;
+            var nuevoNumeroDocumento = Console.ReadLine();
+            profesor.ActualizarDocumento(nuevoNumeroDocumento);
 
             Console.WriteLine("Email nuevo: ");
-            var NuevoEmail = Console.ReadLine();
-            profesor.Email = NuevoEmail;
+            var nuevoEmail = Console.ReadLine();
+            profesor.ActualizarEmail(nuevoEmail);
 
             Console.WriteLine("Teléfono nuevo: ");
-            var NuevoTelefono = Console.ReadLine();
-            profesor.Telefono = NuevoTelefono;
+            var nuevoTelefono = Console.ReadLine();
+            profesor.ActualizarTelefono(nuevoTelefono);
 
             Console.WriteLine("Asignatura nueva: ");
             var NuevaAsignatura = Console.ReadLine();
             profesor.Asignatura = NuevaAsignatura;
 
             Console.WriteLine("Salario nuevo: ");
-            var NuevoSalario = Convert.ToDouble(Console.ReadLine());
-            profesor.Salario = NuevoSalario;
+            var nuevoSalario = Convert.ToDouble(Console.ReadLine());
+            profesor.ActualizarSalario(nuevoSalario);
 
             Console.WriteLine("Salario nuevo: ");
             var NuevaFechaContratacion = Convert.ToDateTime(Console.ReadLine());

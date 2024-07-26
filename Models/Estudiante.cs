@@ -27,10 +27,34 @@ public class Estudiante : Persona
     {
         return NumeroDocumento;
     }
-
-    public string? ObtenerNombre()
+    public void ActualizarNombre(string? nuevoNombre)
     {
-        return Nombre;
+        Nombre = nuevoNombre;
+    }
+
+    public void ActualizarApellido(string? nuevoApellido)
+    {
+        Apellido = nuevoApellido;
+    }
+
+    public void ActualizarTipoDocumento(string? nuevoTipoDocumento)
+    {
+        TipoDocumento = nuevoTipoDocumento;
+    }
+
+    public void ActualizarDocumento(string? nuevoDocumento)
+    {
+        NumeroDocumento = nuevoDocumento;
+    }
+
+    public void ActualizarEmail(string? nuevoEmail)
+    {
+        Email = nuevoEmail;
+    }
+
+    public void ActualizarTelefono(string? nuevoTelefono)
+    {
+        Telefono = nuevoTelefono;
     }
 
     public void AgregarCalificaciones(double calificacion)

@@ -28,6 +28,39 @@ public class Profesor : Persona
     {
         return NumeroDocumento;
     }
+    public void ActualizarNombre(string? nuevoNombre)
+    {
+        Nombre = nuevoNombre;
+    }
+
+    public void ActualizarApellido(string? nuevoApellido)
+    {
+        Apellido = nuevoApellido;
+    }
+
+    public void ActualizarTipoDocumento(string? nuevoTipoDocumento)
+    {
+        TipoDocumento = nuevoTipoDocumento;
+    }
+
+    public void ActualizarDocumento(string? nuevoDocumento)
+    {
+        NumeroDocumento = nuevoDocumento;
+    }
+
+    public void ActualizarEmail(string? nuevoEmail)
+    {
+        Email = nuevoEmail;
+    }
+
+    public void ActualizarTelefono(string? nuevoTelefono)
+    {
+        Telefono = nuevoTelefono;
+    }
+    public void ActualizarSalario(double salario)
+    {
+        this.Salario = salario;
+    }
     public int CalcularAntiguedad()
     {
         return DateTime.Now.Year - FechaContratacion.Year;
