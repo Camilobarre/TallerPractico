@@ -36,9 +36,9 @@ public class Profesor : Persona
         this.FechaContratacion = fechaContratacion;
         this.Cursos = new List<string>();
     }
-    public string? ObtenerNombre()
+    public string? ObtenerCedula()
     {
-        return Nombre;
+        return NumeroDocumento;
     }
     public int CalcularAntiguedad()
     {

@@ -119,10 +119,10 @@ public class AdminApp
 
     public static void EliminarEstudiante()
     {
-        Console.WriteLine("Ingrese el nombre del estudiante a eliminar: ");
-        string? nombreEstudiante = Console.ReadLine();
+        Console.WriteLine("Ingrese la cédula del estudiante a eliminar: ");
+        string? cedulaEstudiante = Console.ReadLine();
 
-        Estudiante? estudiante = BuscarEstudiantePorNombre(nombreEstudiante);
+        Estudiante? estudiante = BuscarEstudiantePorCedula(cedulaEstudiante);
 
         if (estudiante != null)
         {
@@ -131,26 +131,28 @@ public class AdminApp
         }
         else
         {
-            Console.WriteLine("El nombre ingresado no coincide.");
+            Console.WriteLine("La cédula ingresada no coincide.");
         }
     }
-    private static Estudiante? BuscarEstudiantePorNombre(string? nombre)
+    
+    private static Estudiante? BuscarEstudiantePorCedula(string? numeroDocumento)
     {
         foreach (var estudiante in Estudiantes)
         {
-            if (estudiante.ObtenerNombre() == nombre)
+            if (estudiante.ObtenerCedula() == numeroDocumento)
             {
                 return estudiante;
             }
         }
         return null;
     }
+
     public static void EliminarProfesor()
     {
-        Console.WriteLine("Ingrese el nombre del profesor a eliminar: ");
-        string? nombreProfesor = Console.ReadLine();
+        Console.WriteLine("Ingrese la cédula del profesor a eliminar: ");
+        string? cedulaProfesor = Console.ReadLine();
 
-        Profesor? profesor = BuscarProfesorPorNombre(nombreProfesor);
+        Profesor? profesor = BuscarProfesorPorCedula(cedulaProfesor);
 
         if (profesor != null)
         {
@@ -159,15 +161,15 @@ public class AdminApp
         }
         else
         {
-            Console.WriteLine("El nombre ingresado no coincide.");
+            Console.WriteLine("La cédula ingresada no coincide.");
         }
     }
 
-    private static Profesor? BuscarProfesorPorNombre(string? nombre)
+    private static Profesor? BuscarProfesorPorCedula(string? numeroDocumento)
     {
         foreach (var profesor in Profesores)
         {
-            if (profesor.ObtenerNombre() == nombre)
+            if (profesor.ObtenerCedula() == numeroDocumento)
             {
                 return profesor;
             }

@@ -35,9 +35,9 @@ public class Estudiante : Persona
         this.FechaNacimiento = fechaNacimiento;
         this.Calificaciones = new List<double>();
     }
-    public string? ObtenerNombre()
+    public string? ObtenerCedula()
     {
-        return Nombre;
+        return NumeroDocumento;
     }
     public void AgregarCalificaciones(double calificacion)
     {
