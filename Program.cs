@@ -41,9 +41,13 @@ while (bandera)
             break;
         case "5":
             // Editar estudiante
+            AdminApp.EditarEstudiante();
+            AdminApp.PausarMenu();
             break;
         case "6":
             // Editar profesor
+            AdminApp.EditarProfesor();
+            AdminApp.PausarMenu();
             break;
         case "7":
             // Eliminar estudiante
@@ -53,6 +57,10 @@ while (bandera)
         case "8":
             // Eliminar profesor
             AdminApp.EliminarProfesor();
+            AdminApp.PausarMenu();
+            break;
+        case "9":
+            // Consultas de LINQ
             AdminApp.PausarMenu();
             break;
         default:

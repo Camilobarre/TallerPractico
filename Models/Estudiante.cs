@@ -11,34 +11,28 @@ public class Estudiante : Persona
     public DateOnly FechaNacimiento { get; set; }
     public List<double> Calificaciones { get; set; }
 
-    public Estudiante(
-    string nombre, 
-    string apellido, 
-    string tipoDocumento, 
-    string numeroDocumento, 
-    string email, 
-    string telefono, 
-    string nombreAcudiente, 
-    string cursoActual, 
+    public Estudiante(string nombre,
+    string apellido,
+    string tipoDocumento,
+    string numeroDocumento,
+    string email,
+    string telefono,
+    string nombreAcudiente,
+    string cursoActual,
     DateOnly fechaNacimiento
-    )
+    ) : base(nombre, apellido, tipoDocumento, numeroDocumento, email, telefono)
     {
-        this.Id = Guid.NewGuid();
-        this.Nombre = nombre;
-        this.Apellido = apellido;
-        this.TipoDocumento = tipoDocumento;
-        this.NumeroDocumento = numeroDocumento;
-        this.Email = email;
-        this.Telefono = telefono;
-        this.NombreAcudiente = nombreAcudiente;
-        this.CursoActual = cursoActual;
-        this.FechaNacimiento = fechaNacimiento;
-        this.Calificaciones = new List<double>();
     }
     public string? ObtenerCedula()
     {
         return NumeroDocumento;
     }
+
+    public string? ObtenerNombre()
+    {
+        return Nombre;
+    }
+
     public void AgregarCalificaciones(double calificacion)
     {
         Calificaciones.Add(calificacion);

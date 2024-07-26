@@ -121,9 +121,7 @@ public class AdminApp
     {
         Console.WriteLine("Ingrese la cédula del estudiante a eliminar: ");
         string? cedulaEstudiante = Console.ReadLine();
-
         Estudiante? estudiante = BuscarEstudiantePorCedula(cedulaEstudiante);
-
         if (estudiante != null)
         {
             Estudiantes.Remove(estudiante);
@@ -134,7 +132,7 @@ public class AdminApp
             Console.WriteLine("La cédula ingresada no coincide.");
         }
     }
-    
+
     private static Estudiante? BuscarEstudiantePorCedula(string? numeroDocumento)
     {
         foreach (var estudiante in Estudiantes)
@@ -151,9 +149,7 @@ public class AdminApp
     {
         Console.WriteLine("Ingrese la cédula del profesor a eliminar: ");
         string? cedulaProfesor = Console.ReadLine();
-
         Profesor? profesor = BuscarProfesorPorCedula(cedulaProfesor);
-
         if (profesor != null)
         {
             Profesores.Remove(profesor);
@@ -177,6 +173,103 @@ public class AdminApp
         return null;
     }
 
+    public static void EditarEstudiante()
+    {
+        Console.WriteLine("Ingrese la cédula del profesor a eliminar: ");
+        string? cedulaEstudiante = Console.ReadLine();
+        Estudiante? estudiante = BuscarEstudiantePorCedula(cedulaEstudiante);
+        if (estudiante != null)
+        {
+            Console.WriteLine("Vamos a modificar el estudiante!");
+
+            Console.WriteLine("Nombre nuevo: ");
+            var NuevoNombre = Console.ReadLine();
+            estudiante.Nombre = NuevoNombre;
+
+            Console.WriteLine("Apellido Nuevo: ");
+            var NuevoApellido = Console.ReadLine();
+            estudiante.Apellido = NuevoApellido;
+
+            Console.WriteLine("Tipo de documento nuevo: ");
+            var NuevoTipoDocumento = Console.ReadLine();
+            estudiante.TipoDocumento = NuevoTipoDocumento;
+
+            Console.WriteLine("Número de documento nuevo: ");
+            var NuevoNumeroDocumento = Console.ReadLine();
+            estudiante.NumeroDocumento = NuevoTipoDocumento;
+
+            Console.WriteLine("Email nuevo: ");
+            var NuevoEmail = Console.ReadLine();
+            estudiante.Email = NuevoEmail;
+
+            Console.WriteLine("Teléfono nuevo: ");
+            var NuevoTelefono = Console.ReadLine();
+            estudiante.Telefono = NuevoTelefono;
+
+            Console.WriteLine("Nombre acudiente nuevo: ");
+            var NuevoAcudiente = Console.ReadLine();
+            estudiante.NombreAcudiente = NuevoAcudiente;
+
+            Console.WriteLine("Curso actual nuevo: ");
+            var NuevoCurso = Console.ReadLine();
+            estudiante.CursoActual = NuevoCurso;
+        }
+        else
+        {
+            Console.WriteLine("La cédula ingresada no coincide.");
+        }
+    }
+
+    public static void EditarProfesor()
+    {
+        Console.WriteLine("Ingrese la cédula del profesor a eliminar: ");
+        string? cedulaProfesor = Console.ReadLine();
+        Profesor? profesor = BuscarProfesorPorCedula(cedulaProfesor);
+        if (profesor != null)
+        {
+            Console.WriteLine("Vamos a modificar el profesor!");
+
+            Console.WriteLine("Nombre nuevo: ");
+            var NuevoNombre = Console.ReadLine();
+            profesor.Nombre = NuevoNombre;
+
+            Console.WriteLine("Apellido nuevo: ");
+            var NuevoApellido = Console.ReadLine();
+            profesor.Apellido = NuevoApellido;
+
+            Console.WriteLine("Tipo de documento nuevo: ");
+            var NuevoTipoDocumento = Console.ReadLine();
+            profesor.TipoDocumento = NuevoTipoDocumento;
+
+            Console.WriteLine("Número de documento nuevo: ");
+            var NuevoNumeroDocumento = Console.ReadLine();
+            profesor.NumeroDocumento = NuevoTipoDocumento;
+
+            Console.WriteLine("Email nuevo: ");
+            var NuevoEmail = Console.ReadLine();
+            profesor.Email = NuevoEmail;
+
+            Console.WriteLine("Teléfono nuevo: ");
+            var NuevoTelefono = Console.ReadLine();
+            profesor.Telefono = NuevoTelefono;
+
+            Console.WriteLine("Asignatura nueva: ");
+            var NuevaAsignatura = Console.ReadLine();
+            profesor.Asignatura = NuevaAsignatura;
+
+            Console.WriteLine("Salario nuevo: ");
+            var NuevoSalario = Convert.ToDouble(Console.ReadLine());
+            profesor.Salario = NuevoSalario;
+
+            Console.WriteLine("Salario nuevo: ");
+            var NuevaFechaContratacion = Convert.ToDateTime(Console.ReadLine());
+            profesor.FechaContratacion = NuevaFechaContratacion;
+        }
+        else
+        {
+            Console.WriteLine("La cédula ingresada no coincide.");
+        }
+    }
     public static void ImprimirMenu()
     {
         Console.WriteLine("==============================================================================");
@@ -190,10 +283,10 @@ public class AdminApp
         Console.WriteLine("                             6. Editar Profesor                               ");
         Console.WriteLine("                             7. Eliminar Estudiante                           ");
         Console.WriteLine("                             8. Eliminar Profesor                             ");
+        Console.WriteLine("                             9. Consultas LINQ                                ");
         Console.WriteLine("                             0. Salir                                         ");
         Console.WriteLine("==============================================================================");
         Console.Write("Selecciona una opción: ");
-
     }
 
     public static void PausarMenu()

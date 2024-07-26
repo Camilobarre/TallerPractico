@@ -10,7 +10,6 @@ public class Profesor : Persona
     private double Salario { get; set; }
     public DateTime FechaContratacion { get; set; }
     public List<string> Cursos { get; set; }
-    public DateTime FechaContratacion1 { get; }
 
     public Profesor(
         string nombre,
@@ -22,19 +21,8 @@ public class Profesor : Persona
         string asignatura,
         double salario,
         DateTime fechaContratacion
-    )
+    ) : base(nombre, apellido, tipoDocumento, numeroDocumento, email, telefono)
     {
-        this.Id = Guid.NewGuid();
-        this.Nombre = nombre;
-        this.Apellido = apellido;
-        this.TipoDocumento = tipoDocumento;
-        this.NumeroDocumento = numeroDocumento;
-        this.Email = email;
-        this.Telefono = telefono;
-        this.Asignatura = asignatura;
-        this.Salario = salario;
-        this.FechaContratacion = fechaContratacion;
-        this.Cursos = new List<string>();
     }
     public string? ObtenerCedula()
     {
