@@ -347,18 +347,18 @@ public static class AdminApp
         {
             estudiante.MostrarDetalles();
         }
-        // //Ejercicio 4: Ordenar estudiantes por apellido ascendente
-        // Console.WriteLine("--------------------Ejercicio 4--------------------");
-        // var estudiantesOrdenadosPorApellido = AdminApp.Estudiantes.OrderBy(e => e.Apellido).ToList();
-        // foreach (var estudiante in estudiantesOrdenadosPorApellido)
-        // {
-        //     estudiante.MostrarDetalles();
-        // }
+        //Ejercicio 4: Ordenar estudiantes por apellido ascendente
+        Console.WriteLine("--------------------Ejercicio 4--------------------");
+        var estudiantesOrdenadosPorApellido = AdminApp.Estudiantes.OrderBy(e => e.ObtenerApellido()).ToList();
+        foreach (var estudiante in estudiantesOrdenadosPorApellido)
+        {
+            estudiante.MostrarDetalles();
+        }
 
-        // //Ejercicio 5: Calcular salario total de profesores
-        // Console.WriteLine("--------------------Ejercicio 5--------------------");
-        // double salarioTotal = AdminApp.Profesores.Sum(p => p.Salario);
-        // Console.WriteLine($"Salario total de todos los profesores: {salarioTotal:C}");
+        //Ejercicio 5: Calcular salario total de profesores
+        Console.WriteLine("--------------------Ejercicio 5--------------------");
+        double salarioTotal = AdminApp.Profesores.Sum(p => p.ObtenerSalarioLINQ());
+        Console.WriteLine($"Salario total de todos los profesores: {salarioTotal:C}");
 
         //Ejercicio 6: Calcular estudiante con la calificacion mas alta
         Console.WriteLine("--------------------Ejercicio 6--------------------");
@@ -402,13 +402,13 @@ public static class AdminApp
             estudiante.MostrarDetalles();
         }
 
-        // //Ejercicio 11: Ordenar profesores por salario de forma descendente
-        // Console.WriteLine("--------------------Ejercicio 11-------------------");
-        // var profesoresOrdenadosPorSalario = AdminApp.Profesores.OrderByDescending(p => p.Salario).ToList();
-        // foreach (var profesor in profesoresOrdenadosPorSalario)
-        // {
-        //     profesor.MostrarDetalles();
-        // }
+        //Ejercicio 11: Ordenar profesores por salario de forma descendente
+        Console.WriteLine("--------------------Ejercicio 11-------------------");
+        var profesoresOrdenadosPorSalario = AdminApp.Profesores.OrderByDescending(p => p.ObtenerSalarioLINQ()).ToList();
+        foreach (var profesor in profesoresOrdenadosPorSalario)
+        {
+            profesor.MostrarDetalles();
+        }
 
         //Ejercicio 12: Calcular el promedio de edad de los estudiantes
         Console.WriteLine("--------------------Ejercicio 12-------------------");

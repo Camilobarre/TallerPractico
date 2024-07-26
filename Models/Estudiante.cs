@@ -31,9 +31,13 @@ public class Estudiante : Persona
     {
         return NumeroDocumento;
     }
-        public string ObtenerNombreCompleto()
+    public string ObtenerNombreCompleto()
     {
         return $"{Nombre} {Apellido}";
+    }
+    public string? ObtenerApellido()
+    {
+        return Apellido;
     }
     public void ActualizarNombre(string? nuevoNombre)
     {

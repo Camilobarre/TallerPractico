@@ -37,6 +37,10 @@ public class Profesor : Persona
     {
         return $"{Nombre} {Apellido}";
     }
+        public double ObtenerSalarioLINQ()
+    {
+        return Salario;
+    }
 
     public void ActualizarNombre(string? nuevoNombre)
     {
@@ -80,7 +84,7 @@ public class Profesor : Persona
 
     public void ObtenerSalario()
     {
-        Console.WriteLine($"Salario: {this.Salario:C} COP");
+        Console.WriteLine($"Salario: {this.Salario:C}");
     }
 
     public void MostrarCursos()
