@@ -22,10 +22,18 @@ public class Estudiante : Persona
     DateOnly fechaNacimiento
     ) : base(nombre, apellido, tipoDocumento, numeroDocumento, email, telefono)
     {
+        this.NombreAcudiente = nombreAcudiente;
+        this.CursoActual = cursoActual;
+        this.FechaNacimiento = fechaNacimiento;
+        this.Calificaciones = new List<double>();
     }
     public string? ObtenerCedula()
     {
         return NumeroDocumento;
+    }
+        public string ObtenerNombreCompleto()
+    {
+        return $"{Nombre} {Apellido}";
     }
     public void ActualizarNombre(string? nuevoNombre)
     {
@@ -80,7 +88,7 @@ public class Estudiante : Persona
         }
     }
 
-    public override void MostrarDetalles() //override -> sobreescritura del método
+    public override void MostrarDetalles()
     {
         base.MostrarDetalles();
         Console.WriteLine($"Nombre Acudiente: {NombreAcudiente}");

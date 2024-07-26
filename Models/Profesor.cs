@@ -23,11 +23,21 @@ public class Profesor : Persona
         DateTime fechaContratacion
     ) : base(nombre, apellido, tipoDocumento, numeroDocumento, email, telefono)
     {
+        this.Asignatura = asignatura;
+        this.Salario = salario;
+        this.FechaContratacion = fechaContratacion;
+        this.Cursos = new List<string>();
     }
+
     public string? ObtenerCedula()
     {
         return NumeroDocumento;
     }
+    public string ObtenerNombreCompleto()
+    {
+        return $"{Nombre} {Apellido}";
+    }
+
     public void ActualizarNombre(string? nuevoNombre)
     {
         Nombre = nuevoNombre;
@@ -57,10 +67,12 @@ public class Profesor : Persona
     {
         Telefono = nuevoTelefono;
     }
+
     public void ActualizarSalario(double salario)
     {
         this.Salario = salario;
     }
+
     public int CalcularAntiguedad()
     {
         return DateTime.Now.Year - FechaContratacion.Year;
@@ -79,7 +91,7 @@ public class Profesor : Persona
         }
     }
 
-    public override void MostrarDetalles() //override -> sobreescritura del método
+    public override void MostrarDetalles()
     {
         Console.WriteLine($"Rol: Profesor");
         base.MostrarDetalles();

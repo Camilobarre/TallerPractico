@@ -29,7 +29,7 @@ public class Persona
         this.Email = email;
         this.Telefono = telefono;
     }
-    public virtual void MostrarDetalles() //virtual -> permite que se sobreescriba el método
+    public virtual void MostrarDetalles()
     {
         Console.WriteLine($"Id: {Id}");
         Console.WriteLine($"Nombre: {Nombre}");
