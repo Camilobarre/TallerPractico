@@ -84,18 +84,21 @@ public class Estudiante : Persona
     {
         foreach (var calificacion in Calificaciones)
         {
-            Console.WriteLine($"{calificacion},");
+            Console.Write($"{calificacion,-5}");
         }
     }
 
     public override void MostrarDetalles()
     {
+        Console.WriteLine($"Rol:        Estudiante");
         base.MostrarDetalles();
         Console.WriteLine($"Nombre Acudiente: {NombreAcudiente}");
         Console.WriteLine($"Curso Actual: {CursoActual}");
         Console.WriteLine($"Edad: {CalcularEdad()} años");
         Console.WriteLine("Calificaciones: ");
         MostrarCalificaciones();
+        Console.WriteLine();
         CalcularPromedio();
+        Console.WriteLine();
     }
 }

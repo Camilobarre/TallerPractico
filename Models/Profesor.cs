@@ -87,18 +87,20 @@ public class Profesor : Persona
     {
         foreach (var curso in Cursos)
         {
-            Console.WriteLine($"{curso},");
+            Console.Write($"{curso,-3}");
         }
     }
 
     public override void MostrarDetalles()
     {
-        Console.WriteLine($"Rol: Profesor");
+        Console.WriteLine($"Rol:        Profesor");
         base.MostrarDetalles();
         Console.WriteLine($"Asignatura: {Asignatura}");
         ObtenerSalario();
-        Console.WriteLine($"Antiguedad: {CalcularAntiguedad()} años");
-        Console.WriteLine($"Cursos: ");
+        Console.WriteLine($"Antigüedad: {CalcularAntiguedad()} años");
+        Console.WriteLine("Cursos: ");
         MostrarCursos();
+        Console.WriteLine();
     }
+
 }

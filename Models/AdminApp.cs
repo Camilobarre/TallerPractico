@@ -324,6 +324,116 @@ public static class AdminApp
     }
     public static void ConsultasLinq()
     {
-        
+        //Ejercicio 1: Estudiantes con promedio mayor a 85
+        Console.WriteLine();
+        Console.WriteLine("--------------------Ejercicio 1--------------------");
+        var estudiantesConPromedioAlto = AdminApp.Estudiantes.Where(e => e.Calificaciones.Any() && e.Calificaciones.Average() > 85).ToList();
+        foreach (var estudiante in estudiantesConPromedioAlto)
+        {
+            estudiante.MostrarDetalles();
+        }
+        //Ejercicio 2: Profesores que mas cursos enseñan
+        Console.WriteLine("--------------------Ejercicio 2--------------------");
+        var profesoresConMultiplesCursos = AdminApp.Profesores.Where(p => p.Cursos.Count > 2).ToList();
+        foreach (var profesor in profesoresConMultiplesCursos)
+        {
+            profesor.MostrarDetalles();
+        }
+        //Ejercicio 3: Estudiantes cuya edad es mayor a 16
+        Console.WriteLine();
+        Console.WriteLine("--------------------Ejercicio 3--------------------");
+        var estudiantesMayoresDe16 = AdminApp.Estudiantes.Where(e => e.CalcularEdad() > 16).ToList();
+        foreach (var estudiante in estudiantesMayoresDe16)
+        {
+            estudiante.MostrarDetalles();
+        }
+        // //Ejercicio 4: Ordenar estudiantes por apellido ascendente
+        // Console.WriteLine("--------------------Ejercicio 4--------------------");
+        // var estudiantesOrdenadosPorApellido = AdminApp.Estudiantes.OrderBy(e => e.Apellido).ToList();
+        // foreach (var estudiante in estudiantesOrdenadosPorApellido)
+        // {
+        //     estudiante.MostrarDetalles();
+        // }
+
+        // //Ejercicio 5: Calcular salario total de profesores
+        // Console.WriteLine("--------------------Ejercicio 5--------------------");
+        // double salarioTotal = AdminApp.Profesores.Sum(p => p.Salario);
+        // Console.WriteLine($"Salario total de todos los profesores: {salarioTotal:C}");
+
+        //Ejercicio 6: Calcular estudiante con la calificacion mas alta
+        Console.WriteLine("--------------------Ejercicio 6--------------------");
+        var estudianteConCalificacionMasAlta = AdminApp.Estudiantes.OrderByDescending(e => e.Calificaciones.DefaultIfEmpty(0).Max()).FirstOrDefault();
+        if (estudianteConCalificacionMasAlta != null)
+        {
+            Console.WriteLine("Estudiante con la calificación más alta:");
+            estudianteConCalificacionMasAlta.MostrarDetalles();
+        }
+
+        //Ejercicio 7: Numero de estudiantes en cada curso
+        Console.WriteLine("--------------------Ejercicio 7--------------------");
+        var estudiantesPorCurso = AdminApp.Estudiantes.GroupBy(e => e.CursoActual).Select(grupo => new { Curso = grupo.Key, NumeroDeEstudiantes = grupo.Count() }).ToList();
+        foreach (var curso in estudiantesPorCurso)
+        {
+            Console.WriteLine($"Curso: {curso.Curso}, Número de estudiantes: {curso.NumeroDeEstudiantes}");
+        }
+
+        //Ejercicio 8: Filtrar profesores con mas de 10 años de antiguedad
+        Console.WriteLine("--------------------Ejercicio 8--------------------");
+        var profesoresAntiguos = AdminApp.Profesores.Where(p => p.CalcularAntiguedad() > 10).ToList();
+        foreach (var profesor in profesoresAntiguos)
+        {
+            profesor.MostrarDetalles();
+        }
+
+        //Ejercicio 9: Lista de asignaturas unicas que se imparten en la escuela
+        Console.WriteLine("--------------------Ejercicio 9--------------------");
+        var asignaturasUnicas = AdminApp.Profesores.SelectMany(p => p.Asignatura).Distinct().ToList();
+        Console.WriteLine("Asignaturas únicas impartidas:");
+        foreach (var asignatura in asignaturasUnicas)
+        {
+            Console.WriteLine(asignatura);
+        }
+
+        //Ejercicio 10: Buscar estudiantes cuyo nombre de acudiente sea María
+        Console.WriteLine("--------------------Ejercicio 10-------------------");
+        var estudiantesConAcudienteMaria = AdminApp.Estudiantes.Where(e => e.NombreAcudiente.Contains("María")).ToList();
+        foreach (var estudiante in estudiantesConAcudienteMaria)
+        {
+            estudiante.MostrarDetalles();
+        }
+
+        // //Ejercicio 11: Ordenar profesores por salario de forma descendente
+        // Console.WriteLine("--------------------Ejercicio 11-------------------");
+        // var profesoresOrdenadosPorSalario = AdminApp.Profesores.OrderByDescending(p => p.Salario).ToList();
+        // foreach (var profesor in profesoresOrdenadosPorSalario)
+        // {
+        //     profesor.MostrarDetalles();
+        // }
+
+        //Ejercicio 12: Calcular el promedio de edad de los estudiantes
+        Console.WriteLine("--------------------Ejercicio 12-------------------");
+        double promedioEdad = AdminApp.Estudiantes.Average(e => e.CalcularEdad());
+        Console.WriteLine($"Promedio de edad de los estudiantes: {promedioEdad:F2} años");
+
+        //Ejercicio 13: Encontrar profesores que enseñan Matemáticas
+        Console.WriteLine("--------------------Ejercicio 13-------------------");
+        var profesoresMatematicas = AdminApp.Profesores.Where(p => p.Asignatura == "Matemáticas").ToList();
+        foreach (var profesor in profesoresMatematicas)
+        {
+            profesor.MostrarDetalles();
+        }
+
+        //Ejercicio 14: Estudiantes con mas de 3 calificaciones registradas
+        Console.WriteLine("--------------------Ejercicio 14-------------------");
+        var estudiantesConMasDeTresCalificaciones = AdminApp.Estudiantes.Where(e => e.Calificaciones.Count > 3).ToList();
+        foreach (var estudiante in estudiantesConMasDeTresCalificaciones)
+        {
+            estudiante.MostrarDetalles();
+        }
+
+        //Ejercicio 15: Calcular antiguedad promedio de los profesores
+        Console.WriteLine("--------------------Ejercicio 15-------------------");
+        double antiguedadPromedio = AdminApp.Profesores.Average(p => p.CalcularAntiguedad());
+        Console.WriteLine($"Antigüedad promedio de los profesores: {antiguedadPromedio:F2} años");
     }
 }
